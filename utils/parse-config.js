@@ -34,9 +34,9 @@ module.exports = function (options) {
     });
 
     return {
-        accessKey: json.access_key,
-        secretKey: json.secret_key,
-        bucket: json.bucket,
+        accessKey: (options.accessKey || json.access_key),
+        secretKey: (options.secretKey || json.secret_key),
+        bucket: (options.bucket || json.bucket),
         srcDirname: srcDirname,
         uploadFiles: uploadFiles,
         destDirname: json.dest,
