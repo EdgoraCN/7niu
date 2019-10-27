@@ -11,7 +11,10 @@ var cmdClear = require('../cmds/clear.js');
 var cmdInit = require('../cmds/init.js');
 
 command.alias({
-    d: 'dirname'
+    d: 'dirname',
+    a: 'accessKey',
+    s: 'secretKey',
+    b: 'bucket'
 });
 
 command
@@ -19,7 +22,10 @@ command
     .if('version', cmdVersion)
     .if('upload', function (args) {
         cmdUpload({
-            srcDirname: command.dirname(args, 'dirname')
+            srcDirname: command.dirname(args, 'dirname'), 
+            accessKey: command.dirname(args, 'accessKey'),
+            secretKey: command.dirname(args, 'secretKey'),
+            bucket: command.dirname(args, 'bucket')
         });
     })
     .if('clear', function (args) {

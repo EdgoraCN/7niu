@@ -27,6 +27,9 @@ npm install -g 7niu
 
 2. Options
    -d --dirname           >> specified a directory
+   -a --accessKey           >> specified a accessKey
+   -s  --secretKey           >> specified a secretKey
+   -b --bucket                >> specified a bucket
 ```
 
 

@@ -25,11 +25,12 @@ module.exports = function (options) {
     var configs = parseConfig({
         srcDirname: options.srcDirname
     });
-
+    
+    
     qiniu.config({
-        accessKey: configs.accessKey,
-        secretKey: configs.secretKey,
-        bucket: configs.bucket,
+        accessKey: options.accessKey || configs.accessKey,
+        secretKey: options.secretKey ||configs.secretKey,
+        bucket: options.bucket||configs.bucket,
         dirname: configs.destDirname,
         mimeLimit: '*'
     });
