@@ -17,15 +17,16 @@ command.alias({
     b: 'bucket'
 });
 
+
 command
     .if('help', cmdHelp)
     .if('version', cmdVersion)
     .if('upload', function (args) {
         cmdUpload({
             srcDirname: command.dirname(args, 'dirname'), 
-            accessKey: command.dirname(args, 'accessKey'),
-            secretKey: command.dirname(args, 'secretKey'),
-            bucket: command.dirname(args, 'bucket')
+            accessKey:args.accessKey,
+            secretKey: args.secretKey,
+            bucket: args.bucket
         });
     })
     .if('clear', function (args) {

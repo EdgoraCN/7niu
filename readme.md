@@ -7,7 +7,9 @@
 
 ## install
 ```
-npm install -g 7niu
+npm install  https://github.com/EdgoraCN/7niu.git --save-dev
+npx 7niu init
+npx 7niu upload -a  asscessKey -s secretKky
 ```
 
 
